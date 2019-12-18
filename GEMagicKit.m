@@ -86,7 +86,7 @@
         Boolean hasExtensions = CFDictionaryGetValueIfPresent(specification, kUTTagClassFilenameExtension, (const void **)&fileExtensions);
 
         if (hasExtensions && CFArrayGetCount(fileExtensions) > 0) {
-            fileExtension = CFBridgingRelease(CFArrayGetValueAtIndex(fileExtensions, 0));
+            fileExtension = (__bridge NSString *)CFArrayGetValueAtIndex(fileExtensions, 0);
         }
 
         CFRelease(typeDeclaration);
